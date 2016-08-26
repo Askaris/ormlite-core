@@ -1,44 +1,9 @@
 package com.j256.ormlite.field;
 
+import com.j256.ormlite.field.types.*;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
-import com.j256.ormlite.field.types.BigDecimalNumericType;
-import com.j256.ormlite.field.types.BigDecimalStringType;
-import com.j256.ormlite.field.types.BigIntegerType;
-import com.j256.ormlite.field.types.BooleanCharType;
-import com.j256.ormlite.field.types.BooleanIntegerType;
-import com.j256.ormlite.field.types.BooleanObjectType;
-import com.j256.ormlite.field.types.BooleanType;
-import com.j256.ormlite.field.types.ByteArrayType;
-import com.j256.ormlite.field.types.ByteObjectType;
-import com.j256.ormlite.field.types.ByteType;
-import com.j256.ormlite.field.types.CharType;
-import com.j256.ormlite.field.types.CharacterObjectType;
-import com.j256.ormlite.field.types.DateLongType;
-import com.j256.ormlite.field.types.DateStringType;
-import com.j256.ormlite.field.types.DateTimeType;
-import com.j256.ormlite.field.types.DateType;
-import com.j256.ormlite.field.types.DoubleObjectType;
-import com.j256.ormlite.field.types.DoubleType;
-import com.j256.ormlite.field.types.EnumIntegerType;
-import com.j256.ormlite.field.types.EnumStringType;
-import com.j256.ormlite.field.types.EnumToStringType;
-import com.j256.ormlite.field.types.FloatObjectType;
-import com.j256.ormlite.field.types.FloatType;
-import com.j256.ormlite.field.types.IntType;
-import com.j256.ormlite.field.types.IntegerObjectType;
-import com.j256.ormlite.field.types.LongObjectType;
-import com.j256.ormlite.field.types.LongStringType;
-import com.j256.ormlite.field.types.LongType;
-import com.j256.ormlite.field.types.SerializableType;
-import com.j256.ormlite.field.types.ShortObjectType;
-import com.j256.ormlite.field.types.ShortType;
-import com.j256.ormlite.field.types.SqlDateType;
-import com.j256.ormlite.field.types.StringBytesType;
-import com.j256.ormlite.field.types.StringType;
-import com.j256.ormlite.field.types.TimeStampType;
-import com.j256.ormlite.field.types.UuidType;
 
 /**
  * Data type enumeration that corresponds to a {@link DataPersister}.
@@ -229,6 +194,10 @@ public enum DataType {
 	 * Persists the {@link java.sql.Timestamp} Java class. The {@link #DATE} type is recommended instead.
 	 */
 	TIME_STAMP(TimeStampType.getSingleton()),
+	/**
+	 * Persists a {@link java.lang.Class} by storing the FQN of the Class in the table
+	 */
+	CLASS(ClassType.getSingleton()),
 	/**
 	 * Marker for fields that are unknown.
 	 */
